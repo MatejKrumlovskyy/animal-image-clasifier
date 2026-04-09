@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 
-# ── Data Preprocessing ────────────────────────────────────────────────────────
+# Data Preprocessing
 
 train_datagen = ImageDataGenerator(
     rescale=1./255,
@@ -47,7 +47,7 @@ test_set = test_datagen.flow_from_directory(
     shuffle=False
 )
 
-# ── Training Function ─────────────────────────────────────────────────────────
+# Training Function
 
 def build_and_train_model(filters1, filters2, dense_units, epochs, model_name, use_dropout=False):
     """Build, train and evaluate a CNN model. Returns a results dict."""
@@ -123,7 +123,7 @@ def build_and_train_model(filters1, filters2, dense_units, epochs, model_name, u
         "confusion_matrix": cm
     }
 
-# ── Experiments ───────────────────────────────────────────────────────────────
+# Experiments
 
 results = []
 
@@ -143,7 +143,7 @@ results.append(build_and_train_model(
     use_dropout=True
 ))
 
-# ── Summary ───────────────────────────────────────────────────────────────────
+# Summary
 
 print("\n" + "="*50)
 print("RESULTS SUMMARY")
