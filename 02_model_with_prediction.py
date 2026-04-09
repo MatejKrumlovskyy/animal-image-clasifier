@@ -1,4 +1,3 @@
-
 """
 Animal Image Classifier - Model with Single Image Prediction
 Author: Matej Krumlovsky
