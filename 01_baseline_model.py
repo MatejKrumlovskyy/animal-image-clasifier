@@ -1,14 +1,13 @@
-# -*- coding: utf-8 -*-
 """
 Animal Image Classifier - Baseline CNN Model
 =============================================
 A simple CNN trained to classify 4 animal categories:
-  - Cow (krava)
-  - Cat (macka)
-  - Sheep (ovca)
-  - Spider (pavuk)
+  - Cow
+  - Cat
+  - Sheep
+  - Spider 
 
-Dataset structure expected:
+My dataset structure:
   datasetZ2/
     TRAINING/
       cow/ cat/ sheep/ spider/
@@ -25,7 +24,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-# ── Data Preprocessing ──────────────────────────────────────────────────────
+# Data Preprocessing 
 
 train_datagen = ImageDataGenerator(
     rescale=1./255,
@@ -50,7 +49,7 @@ test_set = test_datagen.flow_from_directory(
     shuffle=False
 )
 
-# ── Model Architecture ───────────────────────────────────────────────────────
+# Model Architecture
 
 cnn = tf.keras.models.Sequential([
     tf.keras.layers.Conv2D(filters=32, kernel_size=3, activation='relu', input_shape=[64, 64, 3]),
@@ -65,11 +64,11 @@ cnn = tf.keras.models.Sequential([
 cnn.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 cnn.summary()
 
-# ── Training ─────────────────────────────────────────────────────────────────
+# Training 
 
 history = cnn.fit(x=training_set, validation_data=test_set, epochs=5)
 
-# ── Evaluation ───────────────────────────────────────────────────────────────
+# Evaluation
 
 results_validation = cnn.evaluate(test_set, batch_size=32)
 print(f"\nTest loss: {results_validation[0]:.4f} | Test accuracy: {results_validation[1]:.4f}")
@@ -81,7 +80,7 @@ predicted_classes = np.argmax(predictions, axis=1)
 accuracy = accuracy_score(test_set.classes, predicted_classes)
 print(f"Accuracy score: {accuracy:.4f}")
 
-# ── Confusion Matrix ──────────────────────────────────────────────────────────
+# Confusion Matrix
 
 cm = confusion_matrix(test_set.classes, predicted_classes)
 plt.figure(figsize=(8, 6))
@@ -95,13 +94,13 @@ plt.tight_layout()
 plt.savefig('results/baseline_confusion_matrix.png')
 plt.show()
 
-# ── Classification Report ────────────────────────────────────────────────────
+# Classification Report 
 
 print("\nClassification Report:")
 print(classification_report(test_set.classes, predicted_classes,
                              target_names=test_set.class_indices.keys()))
 
-# ── Training Curves ──────────────────────────────────────────────────────────
+# Training Curves
 
 plt.figure(figsize=(14, 5))
 plt.subplot(1, 2, 1)
