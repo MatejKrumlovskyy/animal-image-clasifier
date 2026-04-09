@@ -1,4 +1,4 @@
-# 🐄 Animal Image Classifier — CNN
+Animal Image Classifier — CNN
 
 A deep learning project for multi-class image classification using Convolutional Neural Networks (CNN). The model classifies images into 4 animal categories: **cow, cat, sheep, and spider**.
 
