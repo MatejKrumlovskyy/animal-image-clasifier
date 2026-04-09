@@ -4,19 +4,19 @@ A deep learning project for multi-class image classification using Convolutional
 
 ---
 
-## 📌 Project Overview
+Project Overview
 
 | Property | Details |
 |---|---|
 | Task | Multi-class image classification |
-| Classes | Cow 🐄, Cat 🐱, Sheep 🐑, Spider 🕷 |
+| Classes | Cow , Cat , Sheep , Spider |
 | Dataset size | ~7,200 training images, ~1,240 test images |
 | Best accuracy | **~76%** |
 | Framework | TensorFlow / Keras |
 
 ---
 
-## 🧠 Model Architecture
+Model Architecture
 
 - `Conv2D` + `MaxPooling2D` layers for feature extraction
 - `Dropout` layer to reduce overfitting
@@ -25,7 +25,7 @@ A deep learning project for multi-class image classification using Convolutional
 
 ---
 
-## 🔧 Key Techniques
+Key Techniques
 
 - **Data Augmentation** — zoom, horizontal flip, shear (via `ImageDataGenerator`)
 - **Dropout regularization** — prevents overfitting
@@ -34,7 +34,7 @@ A deep learning project for multi-class image classification using Convolutional
 
 ---
 
-## 📊 Results
+Results
 
 | Model variant | Test accuracy |
 |---|---|
@@ -44,7 +44,7 @@ A deep learning project for multi-class image classification using Convolutional
 
 ---
 
-## 👤 Author
+Author
 
 **Matej Krumlovský** — FEI STU Bratislava  
 [matejkrumlovsky8@gmail.com](mailto:matejkrumlovsky8@gmail.com)
