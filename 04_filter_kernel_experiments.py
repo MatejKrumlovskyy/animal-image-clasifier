@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Animal Image Classifier - Filter & Kernel Size Experiments
 ===========================================================
@@ -25,7 +24,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import time
 
-# ── Data Loading Function ─────────────────────────────────────────────────────
+# Data Loading Function
 
 def create_data_generators(batch_size, target_size=(64, 64)):
     """Create train and test data generators with given batch size."""
@@ -53,7 +52,7 @@ def create_data_generators(batch_size, target_size=(64, 64)):
     )
     return training_set, test_set
 
-# ── Training Function ─────────────────────────────────────────────────────────
+# Training Function
 
 def build_and_train_model(filters1, filters2, kernel_size1, kernel_size2,
                            dense_units, batch_size, epochs, model_name, use_dropout=False):
@@ -133,7 +132,7 @@ def build_and_train_model(filters1, filters2, kernel_size1, kernel_size2,
         "confusion_matrix": cm
     }
 
-# ── Experiments ───────────────────────────────────────────────────────────────
+# Experiments
 
 results = []
 
@@ -156,7 +155,7 @@ results.append(build_and_train_model(
     use_dropout=True
 ))
 
-# ── Summary ───────────────────────────────────────────────────────────────────
+# Summary
 
 print("\n" + "="*50)
 print("RESULTS SUMMARY")
